@@ -1,5 +1,5 @@
 .main-body{
-    height:1000px;
+    height:700px;
 }
 .card{
     height:350px;
@@ -9,11 +9,28 @@
    
 }
 .card1{
-    height:250px;
+    /* height:250px;
     width:280px;
     border:2px solid rgb(199, 13, 13);
     border-radius: 5px;
-    margin: 10px;
+    margin: 10px; */
+    text-align: center;
+}
+.card-body1 img{
+    border-radius: 50%;
+    height:100px;
+    width:100px;
+    padding: 5px;
+}
+.navbar-nav img{
+    border-radius: 30%;
+    height:50px;
+    width:80px;
+    margin: 5px;
+}
+.navbar-nav li a{
+    font-size: 20px;
+    color:rgb(255, 255, 255);
 }
 /* .scroll-menu{
             height: 400px;
