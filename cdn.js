@@ -2126,7 +2126,7 @@ const FoodComp = (foodsec) => {
     console.log(foodsec);
     return(
         <div className="scroll-menu">
-            <div className="card">
+            <div className="card1">
             <div className="card-body">              
                 <img src="https://tse3.mm.bing.net/th?id=OIP.n5kTYovUzLXXmy_FH0XVpgHaE3&pid=Api&P=0&h=180" alt="food"></img>
                 <h5 className="card-title">{foodsec.newFood.action.text}</h5>

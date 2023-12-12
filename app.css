@@ -4,9 +4,16 @@
 .card{
     height:350px;
     width:300px;
-    border:2px solid rgb(158, 132, 132);
+    border:2px solid rgb(199, 13, 13);
     margin: 10px;
    
+}
+.card1{
+    height:250px;
+    width:280px;
+    border:2px solid rgb(199, 13, 13);
+    border-radius: 5px;
+    margin: 10px;
 }
 /* .scroll-menu{
             height: 400px;
