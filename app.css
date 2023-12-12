@@ -1,17 +1,33 @@
 .main-body{
-    height:580px;
+    height:1000px;
 }
 .card{
     height:350px;
     width:300px;
     border:2px solid rgb(158, 132, 132);
     margin: 10px;
+   
 }
+/* .scroll-menu{
+            height: 400px;
+            width:100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+} */
 .resto-section{
     display: flex;
     padding: 15px;
     
 }
+
+.food-section{
+    display: flex;
+    padding: 15px;
+}
 .highlight-heading{
+    color:rgb(232, 20, 20);
+}
+.resto-heading{
     color:rgb(232, 20, 20);
 }
