@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import MysiteHeader from "./components/HeaderComponent";
+import MysiteBody from "./components/BodyComponent";
 
 
 // // const element = React.createElement("h1",{id:"myheading"},"Welcome to Website");
@@ -30,21 +32,7 @@ import ReactDOM from "react-dom/client";
 // getroot.render(heading);
 
 //Header Component
-const MysiteHeader = () => {
-    return(
-    <div class="site-header">
-        <nav className="navbar navbar-expand bg-warning">
-            <ul className="navbar-nav">
-                <li className="nav-item"><img src="https://cdn.dribbble.com/users/630677/screenshots/3833541/media/201454f743f48c415a38c49419275692.jpg?resize=400x0"></img></li>
-                <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">About</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">Cart Value</a></li>
-            </ul>
-        </nav>
-    </div>
-    )
-};
+
 const Foodinmind = [
     {
         "id": "750592",
@@ -2122,73 +2110,10 @@ const  Newjsondata = [
     }
 ]
 //restaurent component
-const FoodComp = (foodsec) => {
-    console.log(foodsec);
-    return(
-        <div className="scroll-menu">
-            <div className="card1">
-            <div className="card-body1">              
-                <img src="https://tse3.mm.bing.net/th?id=OIP.n5kTYovUzLXXmy_FH0XVpgHaE3&pid=Api&P=0&h=180" alt="food"></img>
-                <h5 className="card-title">{foodsec.newFood.action.text}</h5>
-                {/* <p className="card-text">Rating : {props.resData.info.avgRatingString}</p>
-                <p className="card-text">{props.resData.info.locality}</p> */}
-                {/* <a href="" className="btn btn-primary">Order</a> */}
-            </div>
-            </div>
-        </div>
-        
-    )
-}
-const RestsurantComp = (props) => {
-    console.log(props);
-    return(
-        <div className="scroll-menu">
-            <div className="card">
-            <div className="card-body">              
-                <img src="https://tse3.mm.bing.net/th?id=OIP.n5kTYovUzLXXmy_FH0XVpgHaE3&pid=Api&P=0&h=180" alt="food"></img>
-                <h5 className="card-title">{props.resData.info.name}</h5>
-                <p className="card-text">Rating : {props.resData.info.avgRatingString}</p>
-                <p className="card-text">{props.resData.info.locality}</p>
-                <a href="" className="btn btn-primary">Order</a>
-            </div>
-            </div>
-        </div>
-        
-    )
-}
-//Body Component
-const MysiteBody = () => {
-    return(
-        <div className="main-body">
-            <div className="input-group mt-3 w-25" >
-            <input type="search" name=" " id=" "></input>
-            <button type="submit" className="btn btn-dark">Search</button>
-            </div>        
-            <h3 className="highlight-heading">What's On Your Mind? </h3>
 
-            <div className="food-section">
-                {/* <RestsurantComp propsData = {Newjsondata[0]}/>
-                <RestsurantComp propsData = {Newjsondata[1]}/>
-                <RestsurantComp propsData = {Newjsondata[2]}/>
-                <RestsurantComp propsData = {Newjsondata[2]}/> */}
-                {
-                    Foodinmind.map(foodsel => <FoodComp newFood = {foodsel}/>)
-                }
-               
-                
-            </div> 
-            <h3 className="resto-heading">Find Best Restaurant Near You...</h3>
-            <div className="resto-section">
-                
-                {
-                    Newjsondata.map(rest => <RestsurantComp resData = {rest}/>)
-                }
-                
-            </div>    
-        </div>
-        
-    )
-};
+
+//Body Component
+
 
 //Footer Component
 const MysiteFooter = () => {
