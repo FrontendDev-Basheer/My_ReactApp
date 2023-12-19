@@ -38,12 +38,13 @@
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
-} */
-.resto-section{
+        
+} 
+/* .resto-section{
     display: flex;
     padding: 15px;
     
-}
+} */
 
 .food-section{
     display: flex;
