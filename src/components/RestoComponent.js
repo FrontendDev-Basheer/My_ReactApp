@@ -6,7 +6,7 @@ const RestsurantComp = (props) => {
         <div className="scroll-menu">
             <div className="card">
             <div className="card-body">              
-                <img className="" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + props.resData.info.cloudinaryImageId} alt="food"></img>
+                <img className="card-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + props.resData.info.cloudinaryImageId} alt="food"></img>
                 <h5 className="card-title">{props.resData.info.name}</h5>
                 <p className="card-text">Rating : {props.resData.info.avgRatingString}</p>
                 <p className="card-text">{props.resData.info.locality}</p>

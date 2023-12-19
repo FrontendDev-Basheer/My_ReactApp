@@ -22,7 +22,7 @@ const MysiteBody = () => {
         const newrestdata = jsondata.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
         updatedResto(newrestdata);
     }
-    // console.log(Newjsondata);    
+      
     return(
         <div className="main-body">
             <div className="input-group mt-3 w-25" >
