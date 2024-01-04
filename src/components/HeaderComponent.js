@@ -1,14 +1,31 @@
+
 const MysiteHeader = () => {
     return(
     <div class="site-header">
-        <nav className="navbar navbar-expand bg-warning">
-            <ul className="navbar-nav">
-                <li className="nav-item"><img className="header-logo" src="https://cdn.dribbble.com/users/630677/screenshots/3833541/media/201454f743f48c415a38c49419275692.jpg?resize=400x0"></img></li>
-                <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">About</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
-                <li className="nav-item"><a className="nav-link" href="#">Cart Value</a></li>
-            </ul>
+        <nav className="navbar navbar-expand">
+           <div className="global-nav">
+                <div className="navbar-left">        
+                    <a href="#" ><img className="header-logo" src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg" ></img></a>
+                        <div className="location">
+                            <select className="location-select">
+                                <option>Select Your Location</option>
+                                <option>Hyderabad</option>
+                                <option>Bangalore</option>
+                                <option>Tirupati</option>
+                            </select>
+                        </div>       
+                </div>
+                  
+                <div className="navbar-right">
+                    <ul className="navbar-nav">             
+                        <li className="nav-item"><input className="search-input" type="search" placeholder="Search"/></li>
+                        <li className="nav-item"><a className="nav-link" href="#">Offers</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#">Help</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#">Sign In</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#">Cart</a></li>
+                    </ul>
+                </div>
+            </div>     
         </nav>
     </div>
     )

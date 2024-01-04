@@ -3,7 +3,9 @@
 const RestsurantComp = (props) => {
     console.log(props);
     return(
-        <div className="scroll-menu">
+       
+        
+        <div className="scroll-menu">      
             <div className="card">
             <div className="card-body">              
                 <img className="card-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + props.resData.info.cloudinaryImageId} alt="food"></img>

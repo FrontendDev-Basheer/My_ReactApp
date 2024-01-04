@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 
 const MysiteBody = () => {
 
-    
-
 
     const  [Newjsondata,updatedResto] = useState([ ]);
 
@@ -19,8 +17,24 @@ const MysiteBody = () => {
     const getSwiggydata = async () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.6236709&lng=79.4233186&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         jsondata = await data.json();
-        const newrestdata = jsondata.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
+        const newrestdata = jsondata.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
         updatedResto(newrestdata);
+        
+        
+    }
+
+    const  [Foodinmind,updatedItem] = useState([]);
+
+    useEffect ( () =>{
+        getSwiggyfooddata();
+    },[])
+
+    const getSwiggyfooddata = async () => {
+        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.6236709&lng=79.4233186&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+        jsonitemdata = await data.json();
+        const newitemdata = jsonitemdata.data.cards[0].card.card.gridElements.infoWithStyle.info.imageId;
+        updatedItem(newitemdata);
+        
     }
       
     return(
@@ -36,20 +50,17 @@ const MysiteBody = () => {
             } }
             name ="Rating" className="btn btn-warning">Rating 4+</button>
             </div>        
-            <h3 className="highlight-heading">What's On Your Mind? </h3>
-
-            {/* <div className="food-section">
-                {/* {/* <RestsurantComp propsData = {Newjsondata[0]}/>
-                <RestsurantComp propsData = {Newjsondata[1]}/>
-                <RestsurantComp propsData = {Newjsondata[2]}/>
-                <RestsurantComp propsData = {Newjsondata[2]}/> */}
-                {/* {
-                    Foodinmind.map(foodsel => <FoodComp newFood = {foodsel}/>)
-                }
+            
+            <h3 className="food-heading">What's On Your Mind</h3>
+            <div className="food-section">
+               
+                 {
+                    Foodinmind.map (foodsel => <FoodComp newFood = {foodsel}/>)
+                }      
                 
-                
-            </div>  */} 
-            <h3 className="resto-heading">Find Best Restaurant Near You...</h3>
+            </div>   
+            {/* <h3 className="resto-heading">Find Best Restaurant Near You...</h3> */}
+            <h3 className="main-heading">Restaurants with online food delivery in Tirupati</h3>
             <div className="resto-section">
                 
                 {
