@@ -69,6 +69,7 @@
 .scroll-menu {
     height:300px;
     width:300px;
+    
 
 }
 .scroll-menu .card-image{
@@ -102,4 +103,17 @@
 .card-body {
     padding: 0px;
 
+}
+.main-heading{
+    font-size:30px;
+    color:rgb(174, 100, 10);
+}
+.onlinedel-heading{
+    font-size:30px;
+    color:rgb(6, 139, 123);
+}
+/*whatson mind*/
+.food-menu .card1{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
 }

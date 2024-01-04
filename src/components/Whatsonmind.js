@@ -1,5 +1,5 @@
-const FoodComp = (foodsec) => {
-    console.log(foodsec);
+const WhatsonMind = (foodsec) => {
+    
     return(
         <div className="food-menu">
             <div className="card1">
@@ -13,4 +13,4 @@ const FoodComp = (foodsec) => {
         
     )
 };
-export default FoodComp;
+export default WhatsonMind;

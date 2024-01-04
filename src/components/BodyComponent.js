@@ -1,14 +1,22 @@
 import RestsurantComp from "./RestoComponent";
-import FoodComp from "./FoodComponent";
-import Foodinmind from "../utill/FoodData";
-// import Newjsondata from "../utill/RestaurantData";
+import WhatsonMind from "./Whatsonmind";
+import Onlinefooddel from "./Onlinefooddel"
+// import Foodinmind from "../utill/FoodData";
+// import Restodata from "../utill/RestaurantData";
 import { useEffect, useState } from "react";
 
 
 const MysiteBody = () => {
 
+    //What's on your mind
+    const [whatsonyourmindData,SetyoumindData] = useState ([]);
 
-    const  [Newjsondata,updatedResto] = useState([ ]);
+    //Top Restaurants Data
+    const  [Restodata,SettopResto] = useState([ ]);
+
+    //Resto Online food Delivery
+    const [onlinefoodDel,SetonlinefoodDel] = useState ([]);
+
 
     useEffect ( () =>{
         getSwiggydata();
@@ -17,32 +25,25 @@ const MysiteBody = () => {
     const getSwiggydata = async () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.6236709&lng=79.4233186&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         jsondata = await data.json();
-        const newrestdata = jsondata.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-        updatedResto(newrestdata);
-        
-        
-    }
-
-    const  [Foodinmind,updatedItem] = useState([]);
-
-    useEffect ( () =>{
-        getSwiggyfooddata();
-    },[])
-
-    const getSwiggyfooddata = async () => {
-        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.6236709&lng=79.4233186&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-        jsonitemdata = await data.json();
-        const newitemdata = jsonitemdata.data.cards[0].card.card.gridElements.infoWithStyle.info.imageId;
-        updatedItem(newitemdata);
+        const whatsonmindjson = jsondata.data.cards[0].card.card.gridElements.infoWithStyle.info;
+        const allrestdatajson = jsondata.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+        const onlinedeljson = jsondata.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+        SetyoumindData(whatsonmindjson);
+        SettopResto(allrestdatajson);
+        SetonlinefoodDel(onlinedeljson);
         
     }
+
+    
+
+    
       
     return(
         <div className="main-body">
             <div className="input-group mt-3 w-25" >
             <input type="search" name=" " id=" "></input>
             <button onClick = { () => {
-                filterresto = Newjsondata.filter (
+                filterresto = Restodata.filter (
                     (resto) => resto.info.avgRating >= 4 
                 );
                 console.log(filterresto); 
@@ -50,24 +51,36 @@ const MysiteBody = () => {
             } }
             name ="Rating" className="btn btn-warning">Rating 4+</button>
             </div>        
-            
+             {/* //whats on your mind  */}
             <h3 className="food-heading">What's On Your Mind</h3>
+
             <div className="food-section">
                
                  {
-                    Foodinmind.map (foodsel => <FoodComp newFood = {foodsel}/>)
+                    whatsonyourmindData.map (foodsel => <WhatsonMind newFood = {foodsel}/>)
                 }      
                 
-            </div>   
+            </div>    
             {/* <h3 className="resto-heading">Find Best Restaurant Near You...</h3> */}
-            <h3 className="main-heading">Restaurants with online food delivery in Tirupati</h3>
+            <h3 className="main-heading">Top restaurant chains in Tirupati</h3>
             <div className="resto-section">
                 
                 {
-                    Newjsondata.map(rest => <RestsurantComp resData = {rest}/>)
+                    Restodata.map(rest => <RestsurantComp resData = {rest}/>)
                 }
                 
             </div>    
+
+            <h3 className="onlinedel-heading">Restaurants with online food delivery in Tirupati</h3>
+            <div className="resto-section">
+                
+                {
+                    onlinefoodDel.map(onlinedel => <Onlinefooddel onlinedelData = {onlinedel }/>)
+                }
+                
+            </div> 
+
+            
         </div>
         
     )
