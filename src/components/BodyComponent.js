@@ -19,7 +19,7 @@ const MysiteBody = () => {
     const getSwiggydata = async () => {
         const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.6236709&lng=79.4233186&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         jsondata = await data.json();
-        const newrestdata = jsondata.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
+        const newrestdata = jsondata.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
         updatedResto(newrestdata);
     }
       
