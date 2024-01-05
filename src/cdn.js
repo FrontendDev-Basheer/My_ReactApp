@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import MysiteHeader from "./components/HeaderComponent";
 import MysiteBody from "./components/BodyComponent";
+import MysiteFooter from "./components/FooterComponent";
 
 
 // // const element = React.createElement("h1",{id:"myheading"},"Welcome to Website");
@@ -2115,22 +2116,6 @@ import MysiteBody from "./components/BodyComponent";
 //Body Component
 
 
-//Footer Component
-const MysiteFooter = () => {
-    return(
-        <div className="site-footer">
-            <nav className="navbar navbar-expand bg-warning">
-                <ul className="navbar-nav">
-                    <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">About</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Cart Value</a></li>
-                 </ul>
-            </nav>
-        </div>
-    )
-};
-
 //App Component
 
 const AppComponent = () => {
@@ -2141,6 +2126,6 @@ const AppComponent = () => {
             <MysiteFooter></MysiteFooter>
         </div>
     )
-}
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppComponent></AppComponent>);

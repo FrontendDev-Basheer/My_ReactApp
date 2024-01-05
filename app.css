@@ -4,6 +4,7 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+/*Header Section*/
 .header-logo{
     height:30px;
     width:30px;
@@ -65,13 +66,14 @@
     font-size: 20px;
 }
 
+/*Body Section*/
 
+/*Top Restaurants*/
 .scroll-menu {
     height:300px;
     width:300px;
-    
-
 }
+
 .scroll-menu .card-image{
     height:120px;
     width:200px;
@@ -107,13 +109,36 @@
 .main-heading{
     font-size:30px;
     color:rgb(174, 100, 10);
+    position: relative;
+    left:130px;
+    font-weight: bold;
 }
 .onlinedel-heading{
     font-size:30px;
     color:rgb(6, 139, 123);
+    position: relative;
+    left:130px;
+    font-weight: bold;
 }
 /*whatson mind*/
-.food-menu .card1{
-    display: grid;
-    grid-template-columns: repeat(4,25%);
+.food-section{
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+    left:130px;   
+    max-width: 1000px;
+}
+.food-item{
+    height:150px;
+    width:150px;
+}
+.food-heading{
+    position: relative;
+    left:130px;
+    top:10px;
+    font-weight: bold;
+}
+.input-group{
+    position: relative;
+    left:950px;
 }
