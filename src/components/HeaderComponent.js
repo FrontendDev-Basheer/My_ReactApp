@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const MysiteHeader = () => {
     return(
@@ -5,7 +6,7 @@ const MysiteHeader = () => {
         <nav className="navbar navbar-expand">
            <div className="global-nav">
                 <div className="navbar-left">        
-                    <a href="#" ><img className="header-logo" src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg" ></img></a>
+                    <Link to="/" ><img className="header-logo" src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg" ></img></Link>
                         <div className="location">
                             <select className="location-select">
                                 <option>Select Your Location</option>
@@ -19,10 +20,18 @@ const MysiteHeader = () => {
                 <div className="navbar-right">
                     <ul className="navbar-nav">             
                         <li className="nav-item"><input className="search-input" type="search" placeholder="Search"/></li>
-                        <li className="nav-item"><a className="nav-link" href="#">Offers</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#">Help</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#">Sign In</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#">Cart</a></li>
+                        <li className="nav-item">
+                            <Link to="/offers" className="nav-link">Offers</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/help" className="nav-link">Help</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/signin" className="nav-link">Sign In</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/cart" className="nav-link">Cart</Link>
+                        </li>
                     </ul>
                 </div>
             </div>     

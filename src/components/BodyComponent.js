@@ -4,6 +4,7 @@ import Onlinefooddel from "./Onlinefooddel"
 // import Foodinmind from "../utill/FoodData";
 // import Restodata from "../utill/RestaurantData";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const MysiteBody = () => {
@@ -66,7 +67,11 @@ const MysiteBody = () => {
             <div className="resto-section">
                 
                 {
-                    Restodata.map(rest => <RestsurantComp resData = {rest}/>)
+                    Restodata.map( rest =>
+                        <Link to ={"/restomenu/" + rest.info.id}>
+                            <RestsurantComp resData = {rest}/>
+                        </Link>
+                         )
                 }
                 
             </div>    
