@@ -1,8 +1,9 @@
 
 const RestomrenuCategory = () => {
+    
     return(
-        <div>
-            <h1>Hello</h1>
+        <div className="category-head">
+           <h1 className="caregory-title">Hello</h1>
         </div>
      )
 

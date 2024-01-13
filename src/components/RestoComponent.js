@@ -1,7 +1,7 @@
 
 
 const RestsurantComp = (props) => {
-    console.log(props);
+    //console.log(props);
     return(
        
         
