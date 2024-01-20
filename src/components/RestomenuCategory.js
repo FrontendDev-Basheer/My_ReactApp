@@ -1,10 +1,12 @@
 
-const RestomrenuCategory = () => {
+
+const RestomenuCategory = ({catdata}) => {
+    console.log(catdata);
     return(
-        <div>
-            <h1>Hello</h1>
+        <div className="category-head">
+           <h1 className="caregory-title">{catdata.title}</h1>
         </div>
      )
 
 };
-export default RestomrenuCategory;
+export default RestomenuCategory;
