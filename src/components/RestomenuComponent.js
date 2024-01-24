@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import RestomrenuCategory from "./RestomenuCategory";
+
 const Restomenu = () => {
     const [restomenuInfo, SetrestomenuInfo] = useState(null);
     const {resId} = useParams();
@@ -9,7 +10,6 @@ const Restomenu = () => {
 
     useEffect(()=>{
         fetchMenu();
-    },[]);
     },[]);
 
     const fetchMenu = async() => {
@@ -23,18 +23,23 @@ const Restomenu = () => {
 
     } 
     
-    const categories = restomenuInfo?.data?.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards.filter(
+    const categories = restomenuInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
         (cd) => cd.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log(categories);
-    //const {name,locality} = restomenuInfo?.data?.cards[0]?.card?.card?.info;
+    //console.log(categories);
+    
+    // Destrcuring
+    // const {name} = restomenuInfo?.data?.cards[0]?.card?.card?.info;
+    // console.log(name);
     return (
         <div className="restomenubar">
-            {/* {
-                categories.map((category) => (
-                    <RestomrenuCategory/>
+            
+           
+            {
+                categories?.map((category) => (
+                    <RestomrenuCategory data = {category?.card?.card}/>
                 ))
-            } */}
-       <RestomrenuCategory/>
+            }
+     
             
         </div>
         
