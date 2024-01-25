@@ -32,7 +32,7 @@ const Restomenu = () => {
     // console.log(name);
     return (
         <div className="restomenubar">
-            
+            <h1 className="restoname">{restomenuInfo?.data?.cards[0]?.card?.card?.info.name}</h1>
            
             {
                 categories?.map((category) => (
