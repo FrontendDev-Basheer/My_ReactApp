@@ -7,19 +7,23 @@ import Offers from "./components/OfferComponent";
 import Help from "./components/HelpComponent";
 import Error from "./components/ErrorComponent";
 import Restomenu from "./components/RestomenuComponent";
+import appStore from "./utill/appStore";
+import Cart from "./components/Cart";
 import { createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom";
-
+import { Provider } from "react-redux";
 
 
 //App Component
 
 const AppComponent = () => {
     return(
+        <Provider store={appStore}>
         <div className="app">
             <MysiteHeader></MysiteHeader>
             <Outlet/>
             <MysiteFooter></MysiteFooter>
         </div>
+        </Provider>
     )
 };
 
@@ -44,6 +48,10 @@ const appRouter = createBrowserRouter([
             {
                 path : "/restomenu/:resId",
                 element : <Restomenu/>
+            },
+            {
+                path : "/cart",
+                element : <Cart/>
             }
 
         ],

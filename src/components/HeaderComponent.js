@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MysiteHeader = () => {
+    //subscribing to the store using selector
+    const cartItems = useSelector( (store) => store.cart.items );
+    console.log(cartItems);
     return(
     <div class="site-header">
         <nav className="navbar navbar-expand">
@@ -30,7 +34,7 @@ const MysiteHeader = () => {
                             <Link to="/signin" className="nav-link">Sign In</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/cart" className="nav-link">Cart</Link>
+                            <Link to="/cart" className="nav-link">Cart ({cartItems.length}) </Link>
                         </li>
                     </ul>
                 </div>
